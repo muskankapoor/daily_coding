@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+
+
+/* Given an array arr[] of positive integers of size N. Reverse every sub-array of K group elements. */
+
+
+void ReverseGroup(int arr[], int size, int k){
+  
+  vector<int> reversed;
+
+  for (int i = size - 1; i >=0; k--){
+    reversed.push_back(arr[i]);
+    cout << arr[i] << " ";
+  }
+
+
+}
+
+
+
+int main(){
+
+  int arr[] = {20, 10, 40, 30, 60, 50};
+  
+  ReverseGroup(arr, 6, 2);
+
+}
