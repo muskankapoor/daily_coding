@@ -10,15 +10,19 @@ int countWindowDistinct(int arr[], int k) {
   int dist_count = 0; 
 
   // i = 0, i < 4
-  for (int i=0; i<k; i++) {  
-    int j; 
-    for (j=0; j<i; j++) {  // i = 0 j = 1
-      if (arr[i] == arr[j]) {  // i = 0 j = 2
+  for (int i=0; i<k; i++) {
+    // 0  1  2
+    int j;  //0  1  2
+    for (j=0; j<i; j++) {
+ 
+      if (arr[i] == arr[j]) { // 1 == 1
 	break;
+
       }	      
     }
-    if (j==i){ 
-      dist_count++;
+    if (j==i){
+      
+      dist_count++; //1 2 
     }
   } 
   return dist_count; 
