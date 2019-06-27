@@ -1,8 +1,12 @@
 https://www.youtube.com/playlist?list=PLI1t_8YX-ApvMthLj56t1Rf-Buio5Y8KL
 
-Data Structures: LinkedLists, Trees, Tries, HashMaps, HashSets, Arrays, Stacks, Queues, Graphs
-Sorts: Quick Sort, Merge Sort, Insertion Sort, Bucket Sort
-Searches: Binary Search, Depth First Search, Breadth First Search
+Data Structures: LinkedLists, Trees, Tries, HashMaps, HashSets, Arrays, Stacks, Queues, Graphs heaps 
+Sorts: Quick Sort, Merge Sort, Insertion Sort, Bucket Sort (sorting)
+Searches: Binary Search, Depth First Search, Breadth First Search (searching)
 Algorithms: Greedy Algorithms, Dynamic Programming, Divide and Conquer
 Bit-wise Operators
 Big O notations
+recursion
+
+
+languages: java c++ python Javscript go method classes
