@@ -1,33 +1,70 @@
+// Given three increasingly sorted arrays A, B, C of sizes N1, N2, and N3 respectively, you need to print all common elements in these arrays.
+
 #include <iostream>
-#include <set>
+
+#include <unordered_set>//for hash table
 
 using namespace std;
 
-its stdc++.h="">
-#include <unordered_map>
-using namespace std;
+int main(){
 
-int main() {
-int t,n1,n2,n3;
-cin>>t;
-while (t--){
-cin>>n1>>n2>>n3;
-int a1[n1],a2[n2],a3[n3],flag=0,x;
-x=max(max(n1,n2),n3);
-unordered_map <int,int> m;
-for(int i=0;i<n1;i++){ cin="">>a1[i];
-if (a1[i]!=a1[i-1])
-m[a1[i]]++;
+  //input size of three arrays
+
+  int n1, n2, n3;
+
+  cin >> n1 >> n2 >> n3;
+
+  unordered_set<int> s1;
+  unordered_set<int> s2;
+  unordered_set<int> s3;//initialize three empty hash table
+
+  //insert elements of first array in s1
+
+  while(n1--){
+
+    int x;
+
+    cin >> x;
+
+    s1.insert(x);
+
+  }
+
+  
+
+    //insert elements of second array in s2
+
+    while(n2--){
+
+      int x;
+
+      cin >> x;
+
+      s2.insert(x);
+
+    }
+
+      //for third array, check if an element is already in s1, and s2
+
+      //and not in s3 yet(to avoid duplicates), then insert it in s3 and print that element.
+
+      while(n3--){
+
+	int x;
+
+	cin >> x;
+
+	if(s1.find(x) != s1.end() && s2.find(x) != s2.end() && s3.find(x) == s3.end()){
+
+	  s3.insert(x);
+
+	  cout << x << " ";
+
+       
+	}
+      }
+
+	  cout << endl;
+
 }
-for(int i=0;i<n2;i++){ cin="">>a2[i];
-if (a2[i]!=a2[i-1])
-m[a2[i]]++;
-}
-for(int i=0;i<n3;i++){ cin="">>a3[i];
-if (a3[i]!=a3[i-1])
-m[a3[i]]++;
-}
-int a[x];
-int j=0;
-for (auto x:m){
-// cout<<x.first<<" ";="" if="" (x.second="=3){" a[j]="x.first;" j++;="" flag="1;" }="" }="" sort(a,a+j);="" for="" (int="" i="0;i&lt;j;i++)" cout<<a[i]<<"="" ";="" if="" (flag="=0)" cout<<-1;="" cout<<endl;="" }="" code="" return="" 0;="" }="">
+
