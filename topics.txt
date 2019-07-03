@@ -1,7 +1,6 @@
-https://www.youtube.com/playlist?list=PLI1t_8YX-ApvMthLj56t1Rf-Buio5Y8KL
 
 Data Structures: LinkedLists, double linked lsit,  Trees, Tries, HashMaps, HashSets, Arrays, Stacks, Queues, Graphs
-Sorts: Quick Sort, Merge Sort, Insertion Sort, Bucket Sort
+Sorts: Quick Sort, Merge Sort, Insertion Sort, Bucket Sort, Selection sort 
 Searches: Binary Search, Depth First Search, Breadth First Search
 Algorithms: Greedy Algorithms, Dynamic Programming, Divide and Conquer
 Bit-wise Operators
