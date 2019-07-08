@@ -56,7 +56,7 @@ public:
     }
   }
   
-  void printList(Node *head){
+  void printList(){
 
     Node *current = head;
 
@@ -66,23 +66,27 @@ public:
     }
   }
 
+
 };
-
-
-
-int main(){
-
-
-  Node *head; 
-  LinkedList obj;
-  obj.append(3);
-  obj.append(4);
-  obj.append(5);
-
-  obj.printList(head);
-
+SinglyLinkedListNode* insertNodeAtPosition(SinglyLinkedListNode* head, int data, int position) 
+{
+    SinglyLinkedListNode* new_node = new SinglyLinkedListNode(data);
+    SinglyLinkedListNode* temp = head;
+    /*if(position == 0)
+    {
+        aux->next = temp;
+        head = aux;
+        return aux;
+    }*/
+    int i = 0;
+    while(i < position - 1){
+        temp = temp->next;
+        i++;
+    }
+    new_node->next = temp->next;
+    temp->next = new_node; 
+    return head; 
+    // 123 pos =2
+    // new 1243
 }
   
-    
-
-    
