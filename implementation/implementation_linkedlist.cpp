@@ -348,3 +348,233 @@ bool has_cycle(SinglyLinkedListNode* head) {
     }
     return currentB->data;
 }
+
+
+
+ // doubly linked lst
+
+ class DoublyLinkedListNode {
+    public:
+        int data;
+        DoublyLinkedListNode *next;
+        DoublyLinkedListNode *prev;
+
+        DoublyLinkedListNode(int node_data) {
+            this->data = node_data;
+            this->next = nullptr;
+            this->prev = nullptr;
+        }
+};
+
+class DoublyLinkedList {
+    public:
+        DoublyLinkedListNode *head;
+        DoublyLinkedListNode *tail;
+
+        DoublyLinkedList() {
+            this->head = nullptr;
+            this->tail = nullptr;
+        }
+
+        void insert_node(int node_data) {
+            DoublyLinkedListNode* node = new DoublyLinkedListNode(node_data);
+
+            if (!this->head) {
+                this->head = node;
+            } else {
+                this->tail->next = node;
+                node->prev = this->tail;
+            }
+
+            this->tail = node;
+        }
+};
+
+void print_doubly_linked_list(DoublyLinkedListNode* node, string sep, ofstream& fout) {
+    while (node) {
+        fout << node->data;
+
+        node = node->next;
+
+        if (node) {
+            fout << sep;
+        }
+    }
+}
+
+void free_doubly_linked_list(DoublyLinkedListNode* node) {
+    while (node) {
+        DoublyLinkedListNode* temp = node;
+        node = node->next;
+
+        free(temp);
+    }
+}
+
+// Complete the sortedInsert function below.
+
+/*
+ * For your reference:
+ *
+ * DoublyLinkedListNode {
+ *     int data;
+ *     DoublyLinkedListNode* next;
+ *     DoublyLinkedListNode* prev;
+ * };
+ *
+ */
+
+
+// doubly linked lsit
+ #include <bits/stdc++.h>
+
+using namespace std;
+
+class DoublyLinkedListNode {
+    public:
+        int data;
+        DoublyLinkedListNode *next;
+        DoublyLinkedListNode *prev;
+
+        DoublyLinkedListNode(int node_data) {
+            this->data = node_data;
+            this->next = nullptr;
+            this->prev = nullptr;
+        }
+};
+
+class DoublyLinkedList {
+    public:
+        DoublyLinkedListNode *head;
+        DoublyLinkedListNode *tail;
+
+        DoublyLinkedList() {
+            this->head = nullptr;
+            this->tail = nullptr;
+        }
+
+        void insert_node(int node_data) {
+            DoublyLinkedListNode* node = new DoublyLinkedListNode(node_data);
+
+            if (!this->head) {
+                this->head = node;
+            } else {
+                this->tail->next = node;
+                node->prev = this->tail;
+            }
+
+            this->tail = node;
+        }
+};
+
+void print_doubly_linked_list(DoublyLinkedListNode* node, string sep, ofstream& fout) {
+    while (node) {
+        fout << node->data;
+
+        node = node->next;
+
+        if (node) {
+            fout << sep;
+        }
+    }
+}
+
+void free_doubly_linked_list(DoublyLinkedListNode* node) {
+    while (node) {
+        DoublyLinkedListNode* temp = node;
+        node = node->next;
+
+        free(temp);
+    }
+}
+
+// Complete the sortedInsert function below.
+
+/*
+ * For your reference:
+ *
+ * DoublyLinkedListNode {
+ *     int data;
+ *     DoublyLinkedListNode* next;
+ *     DoublyLinkedListNode* prev;
+ * };
+ *
+ */
+ DoublyLinkedListNode* sortedInsert(DoublyLinkedListNode* head, int data) {
+  
+   DoublyLinkedListNode *newNode; 
+   
+   //Set the data of newNode as data
+   newNode->data = data; 
+
+   //Now we need to update the next and prev pointers of newNode -
+   //based on its position
+   if(head == NULL) {
+     //Base case : If the list is empty
+     newNode->next = NULL; //Set next and prev pointers as NULL
+     newNode->prev = NULL;
+     //This node now becomes the head node(the only node), so return it.
+     return newNode;
+   }
+
+   if(head->data >= newNode->data) {
+     //If the node's position is in the beginning of the list
+     //set the next pointer of the newNode to point to the currentHead
+     newNode->next = head; 
+     newNode->prev = NULL; //Because it is the beginning of the list
+     //Update the prev pointer of the current head to point to newNode
+     head->prev = newNode; 
+     //This node now becomes the head node, so make it.
+     head = newNode;
+   } 
+   else {
+     //Find the position of the new node using a temporary current Node
+     DoublyLinkedListNode *current = head;
+     while(current->next != NULL && current->next->data < newNode->data) {
+       current = current->next;
+     }
+     //newNode lies between current and current->next
+     newNode->prev = current;
+     newNode->next = current->next;
+     //It might happen that newNode's position is at the end. 
+     //In that case we cannot update the current->next's (which is NULL) 
+     //prev pointer
+     if(current->next != NULL) {
+       current->next->prev = newNode;
+     }
+     //Update the next pointer of current to point to this new node.
+     current->next = newNode; 
+   } 
+   //Finally return the head pointer.
+   return head;
+
+
+ }
+
+
+ 
+
+void deleteNode(Node** head_ref, Node* del)  
+{  
+    /* base case */
+    if (*head_ref == NULL || del == NULL)  
+        return;  
+  
+    /* If node to be deleted is head node */
+    if (*head_ref == del)  
+        *head_ref = del->next;  
+  
+    /* Change next only if node to be  
+    deleted is NOT the last node */
+    if (del->next != NULL)  
+        del->next->prev = del->prev;  
+  
+    /* Change prev only if node to be  
+    deleted is NOT the first node */
+    if (del->prev != NULL)  
+        del->prev->next = del->next;  
+  
+    /* Finally, free the memory occupied by del*/
+    free(del);  
+    return;  
+}  
