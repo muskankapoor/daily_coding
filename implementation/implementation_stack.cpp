@@ -137,3 +137,97 @@ int equalStacks(vector<int> h1, vector<int> h2, vector<int> h3) {
 
 
 
+// game two stacks
+
+
+int main(){
+    int t;
+    cin >> t;
+    while (t--) {
+        int n, m ,ms;
+        scanf("%d%d%d", &n, &m, &ms);
+ 
+        for(int A_i = 0; A_i < n; A_i++){
+            scanf("%d",&A[A_i]);
+        }
+        for(int B_i = 0; B_i < m; B_i++){
+           scanf("%d",&B[B_i]);
+        }
+
+        long long sum = 0;
+        int x = 0, y = 0;
+
+        while (x < n && sum + A[x] <= ms) {
+            sum += A[x++];
+        }
+
+        int ans = x;
+
+        while (y < m && x >= 0) {
+            sum += B[y++];
+            while (sum > ms && x > 0) {
+                sum -= A[--x];
+            }
+
+            if (sum <= ms && ans < x + y) {
+                ans = x + y;
+            }
+        }
+
+        printf("%d\n",ans);
+    }
+    return 0;
+}
+
+
+
+// largest retagn'e
+#include <bits/stdc++.h>
+using namespace std;
+
+typedef long long           lli;
+
+#define pb push_back
+
+
+vector < lli > height;
+vector < int > s;
+lli Histogram(vector<lli> &height)
+{
+    s.clear();
+    height.push_back(0);
+
+    lli sum = 0;
+    int i = 0;
+    while(i < height.size())
+    {
+        if(s.empty() || height[i] > height[s.back()])
+        {
+            s.push_back(i);
+            i++;
+        }
+        else
+        {
+            int t = s.back();
+            s.pop_back();
+
+            sum = max(sum, height[t] * (s.empty() ? i : i - s.back() - 1));
+        }
+    }
+
+    return sum;
+}
+
+int main(void)
+{
+    int i,j,k,kase=0;
+
+    int n;
+    while( scanf("%d",&n)==1 )
+    {
+        height.assign(n, 0);
+        for(i=0; i<n; i++) scanf("%lld",&height[i]);
+        printf("%lld\n",Histogram(height));
+    }
+    return 0;
+}

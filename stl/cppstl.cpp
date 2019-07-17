@@ -131,7 +131,7 @@ void powerofstl(){
 
 
   // to check for comparesion of a,b and c, d
-  // 			     compare a < c
+  //   		     compare a < c
   // 					 then checkk b and d 
   set<pair<int, int>> s;
   s.insert({30, 400});
