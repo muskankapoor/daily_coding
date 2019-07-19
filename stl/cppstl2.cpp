@@ -17,7 +17,13 @@ int main(){
 
   int n;.
   cin >> n;
-  vector<int
+  vector<int> A(n, 0); // INITIALZING with 0
+
+  for (int i = 0; i < n; i++){
+    cin >> A[i];
+    
+  }
+  
 
 
 }
