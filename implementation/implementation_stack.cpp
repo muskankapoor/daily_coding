@@ -1,7 +1,4 @@
 #include <stack>
-
-
-
 #include <cmath>
 #include <cstdio>
 #include <vector>
