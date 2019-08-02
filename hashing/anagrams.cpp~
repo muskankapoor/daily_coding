@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+void sherlockAndAnagrams(string s) {
+
+    int freq1[26];
+    for (int i=0;i<26;i++){
+        // set all the to 0
+        freq1[i]=0;
+    }  
+    for (char ch:s1){
+        freq1[ch-'a']++;
+        // count frequency 
+    }
+    for (int i = 0; i < 26; i++){
+        cout << freq1[i] << " ";
+
+    }
+
+}
+
+int main(){
+
+  sherlockAndAnagrams("abba");
+
+}
