@@ -23,26 +23,24 @@ using namespace std;
 //look at one elemetn target - x =then the tw numbers
 //otherwise increment that number
 
-vector<int> twoSum(int arr[], int target, int size){
+
+vector<int> twoSum(vector<int>& nums, int target) {
+
   unordered_map<int, int> sum;
-  vector<int> vect;
 
-  for (int i = 0; i < size; i++){
-    sum.insert(std::make_pair(arr[i], i));
-  }
+  for (int i = 0; i < nums.size(); i++){
+    sum[nums[i]] = i; // {2, 7, 11, 15}; sum[2] == 0
+  } 
 
-  for (int i = 0; i < size; i++){
-    int value = target - arr[i];
-    if (sum.find(value)==sum.end() && sum.at(value)!=i){
-      vect.push_back(arr[value]);
-      vect.push_back(arr[i]);
+  for (int i = 0; i < nums.size(); i++){
+    int value = target - nums[i]; //9 - 2 = 7
+    if (sum.count(value) && sum[value]!=i){ //7 and i != 0
+      return {i, sum[value]};  //0, 1
     }
   }
-
-  return vect;
+  return {};
 }
-
-
+      
 
 int main(){
 
