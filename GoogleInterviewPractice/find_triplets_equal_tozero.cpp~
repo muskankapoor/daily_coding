@@ -1,0 +1,38 @@
+// Find all triplets with zero sum
+
+#include <iostream>
+#include <set>
+#include <unordered_set>
+using namespace std; 
+
+void findTriplets(int arr[], int size){
+
+  unordered_set<int> s;
+  for (int i = 0; i < size; i++){
+    for (int j = 1; j < size; j++){
+
+      int x = -(arr[i] + arr[j]);
+      if (s.find(x) != s.end()){
+	cout << arr[i] << " " << arr[j] << " " << x << "\n";
+      }
+      else{
+	s.insert(arr[i]);
+      }
+
+    }
+  }
+}
+
+
+int main() { 
+    int arr[] = {0, -1, 2, -3, 1}; 
+    int n = sizeof(arr)/sizeof(arr[0]); 
+    findTriplets(arr, n); 
+    return 0; 
+} 
+    
+
+
+
+
+}
