@@ -3,6 +3,7 @@
 #include <bits/stdc++.h> 
 using namespace std; 
 #define NO_OF_CHARS 256 
+ABDEFGABEF
 
 int longestUniqueSubsttr(string str) 
 { 
@@ -20,19 +21,19 @@ int longestUniqueSubsttr(string str)
 
 	/* Mark first character as visited by storing the index 
 	of first character in visited array. */
-	visited[str[0]] = 0; 
+	visited[str[0]] = 0;  a
 
 	/* Start from the second character. First character is 
 	already processed (cur_len and max_len are initialized 
 	as 1, and visited[str[0]] is set */
 	for (int i = 1; i < n; i++) { 
-		prev_index = visited[str[i]]; 
+		prev_index = visited[str[i]];  
 
 		/* If the currentt character is not present in the 
 		already processed substring or it is not part of 
 		the current NRCS, then do cur_len++ */
 		if (prev_index == -1 || i - cur_len > prev_index) 
-			cur_len++; 
+		  cur_len++;  //
 
 		/* If the current character is present in currently 
 		considered NRCS, then update NRCS to start from 
