@@ -57,7 +57,7 @@ int isBSTHelper(Node *node, int min, int max){
 
   
 nt main()  {
-  /* 4
+  /X 4
 2      5
 1 3
   */
