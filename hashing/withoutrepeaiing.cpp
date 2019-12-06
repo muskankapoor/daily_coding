@@ -1,25 +1,7 @@
 // Given a string, find the length of the longest substring without repeating characters.
 
 int lengthOfLongestSubstring(string s) {
-     /*   int count = 0;
-        vector<int> v; 
-        for (int i = 0; i < s.length(); i++){
-            if (s[i] != s[i+1]){
-                count++;
-                v.push_back(count);
-            }
-            else{
-                count = 0; 
-            }
-        }
-        int max = 0;
-        for (int i = 0; i < v.size(); i++){
-            if (count > max){
-                max = count; 
-            }
-        }
-        return max; 
-    }*/
+     
     if (s.size() == 0){
         return 0;
     }

@@ -49,7 +49,7 @@ int main(){
 
 
   string str = "AAAABBBCCDAA";
-  //encoide(str);
-   encode(str);
+  encoide(str);
+  // encode(str);
 
 }

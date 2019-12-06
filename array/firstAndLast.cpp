@@ -21,6 +21,8 @@ void FirstAndLast(int arr[], int size, int element){
     }
   }
 
+  // can do a condtion if i doesn't equal j then print it out 
+
 }
 
 
