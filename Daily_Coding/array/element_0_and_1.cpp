@@ -13,9 +13,6 @@ void print_sorted(int arr[], int size){
         while (arr[left] == 0 && left < right){
             left++;
         }
-        while (arr[left] == 0 && left < right){
-            left++;
-        }
         
         while (arr[right] == 1 && right > left){
             right--;
