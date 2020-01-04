@@ -7,8 +7,8 @@
 
 using namespace std;
 
-string isBalanced(string s) {
-    // Complete this function
+void isBalanced(string s) {
+
     stack<char> st;
     st.push('@');
     
@@ -23,10 +23,21 @@ string isBalanced(string s) {
       }
     }
     if(st.top()=='@'){
-      return "balanced";
+        cout << "balanced" << endl;
+  
     }
     else{
-      return "NOt balanced";
+      cout << "Not balanced" << endl;
+    
+      if (st.top() == '('){
+          cout << ')';
+      }
+      if (st.top() == '['){
+          cout << ']';
+      }
+      if (st.top() == '{'){
+          cout << '}';
+      }
     }
 }
 
@@ -37,10 +48,10 @@ int main(){
   string str2 = "([]";
 
 
-  cout << isBalanced(str);
+  isBalanced(str);
   cout << "\n";
-  cout << isBalanced(str1);
+  isBalanced(str1);
   cout << "\n";
-  cout << isBalanced(str2);
+ isBalanced(str2);
   
 }
