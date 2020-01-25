@@ -5,7 +5,7 @@ using namespace std;
 // print all substring of string
 
 
-void subtring(string str){
+void subtring1(string str){
 
 
   for (int i = 0; i < str.length(); i++){
@@ -18,7 +18,7 @@ void subtring(string str){
 
 int main(){
 
-  string abcd = "abcd";
-  cout << substring(abcd);
+  string abcd = "abcde";
+  substring1(abcd);
 
 }
