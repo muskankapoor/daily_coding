@@ -1,0 +1,23 @@
+// find unique elemtns in array2
+// so lets put eleemnts of array1 in array
+#include <iostream>
+using namespace std;
+
+
+
+void uniqueElements(int arr1[], int arr2[], int size1, int size2){
+
+  unordered_set<int> s; // no duplicates
+  for (int i = 0; i < size1; i++){
+    s.insert(arr1[i]);
+  }
+
+  // Print all elements of  
+  // first array that are not 
+  // present in hash table 
+  for (int i = 0; i < size2; i++) {
+    if (s.find(arr2[i]) == s.end()) {
+      cout << arr2[i] << " ";
+    }
+  }
+}
