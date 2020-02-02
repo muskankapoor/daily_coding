@@ -1,0 +1,46 @@
+Git is a powerful tool
+
+Github is not git but it is a website that hosts projects that use git
+Git is a versin control system that makes it easy to track change files
+
+For example, when you edit a file, git can help you determine exactly what changed, who changed it, and why if needed
+
+what version control system is - is the management of changes to documents, computer programs, large web sites, and other collections of information
+
+
+It¡¯s useful for coordinating work among multiple people on a project.
+and really good for design work or essay
+
+Git isn¡¯t the only version control system out there, but it¡¯s by far the most popular. 
+
+Alternatives: CVS - kind of where it started, SVN, ideal not along all platforms
+
+
+ can download git¡¯s command-line interface
+ 
+use the  graphical user interface (GUI) instead, try GitHub Desktop
+
+Commands:
+1. Start your own repository from scratch (in any existing folder on your computer):
+git init
+2.git clone https://github.com/cooperka/emoji-commit-messages.git
+This will download a .git repository from the internet (GitHub) to your computer and extract the latest snapshot of the repo (all the files) to your working directory.
+3. git status
+4. Create a new branch name:
+git branch <new-branch-name>
+You can think of this like creating a local ¡°checkpoint¡± (technically called a reference) and giving it a name.
+save each form in the form of ocmmit
+5. Check out a particular branch:
+git checkout <existing-branch-name>
+6. tage your changes to prepare for committing them:
+git add <files>
+After editing some files, this command will mark any changes you¡¯ve made as ¡°staged¡± (or ¡°ready to be committed¡±).
+7. git commit
+8. git push origin <branch-name>
+9. git merge, git fetch
+10. git pull origin master
+
+Tree trunk = database
+branch = changes
+
+pull request (PR) or a merge reque. change back in main brandch
