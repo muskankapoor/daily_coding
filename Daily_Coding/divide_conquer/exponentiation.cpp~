@@ -1,0 +1,20 @@
+// ex: 3^8
+
+// use standard recurssion process ex 3 * 3^7
+
+int exponent(int base, int power){
+
+  if (power == 0){
+    return 1; 
+  }
+
+  return base * exponent(bse, power - 1);
+
+ 
+}
+
+int main(){
+
+  cout << exponent(3, 8);
+
+}
