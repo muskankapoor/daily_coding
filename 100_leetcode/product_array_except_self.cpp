@@ -7,7 +7,7 @@ using namespace std;
 // leftarray and right array O(n) space complexity
 // and O(N) time 
 
-void ProductArray(vector<int> nums){
+vector<int> ProductArray(vector<int> nums){
 
   vector<int> left_array;
   vector<int> right_array;
@@ -31,13 +31,14 @@ void ProductArray(vector<int> nums){
   for(int i=0;i<product_array.size();i++){
     cout<<product_array[i]<<" ";
   }
+  return product_array;
   
 
 }
 
 
 // this fullfills o(1) space
-void Modified(vector<int> nums){
+vector<itn> Modified(vector<int> nums){
   
   vector<int> left_array;
   left_array[0] = 1;
@@ -49,11 +50,11 @@ void Modified(vector<int> nums){
 
   right = 1; 
   for (int j = nums.size() - 1; j >=0; j--){
-    left_array[i] = R * nums[i];
+    left_array[i] = R * left_array[i];
     R = nums[i] * R;
   }
 
- 
+  return left_array;
 }
 
 int main(){
@@ -62,8 +63,8 @@ int main(){
   inV.push_back(2);
   inV.push_back(3);
   inV.push_back(4);
-  ProductArray(inV);
-  Modified(inV);
+  cout <<  ProductArray(inV);
+  cout << Modified(inV);
 
  
   //return 0;
