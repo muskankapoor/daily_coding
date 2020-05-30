@@ -1,0 +1,40 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+
+
+// Given an array, rotate the array to the right by k steps, where k is non-negative.
+
+
+vector<int> rotate(vector<int> arr){
+
+  int last_element = arr[arr.size() - 1];
+  for (int i = arr.size(); i > 0; i--){  
+    arr[i - 1] = arr[i];
+  }
+  arr[0] = last_element;
+  return arr; 
+
+}
+
+`int main(){
+
+  vecctor<int> a;
+  a.push_back(1);
+  a.push_back(2);
+  a.push_back(3);
+  a.push_back(4);
+
+  for (int i = 0; i < a.size(); i++){
+
+    cout << a[i] << " ";
+  }
+
+  cout << rotate(a);
+  for (int i = 0; i < a.size(); i++){
+    cout << a[i];
+  }
+  
+  
+}
