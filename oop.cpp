@@ -1,7 +1,8 @@
 #include <iostream>
-
+using namespace std; 
 
 class A{
+public:
   static int x;
   A(){
     
@@ -13,11 +14,13 @@ class A{
   void* operator new(size_t sz){
     x++;
   }
+  void* operator delete(size_t sz){
+      x--;
+  }
   
 };
 
-
-A::X = 0;
+int A::x = 0;
 
 int main(){
   A a, b, c;
