@@ -31,6 +31,10 @@ void Duplicates(vector<int> arr){
 }
 
 
+
+
+
+
 int main(){
 
   vector<int> v ={4,3,2,7,8,2,3,1};
