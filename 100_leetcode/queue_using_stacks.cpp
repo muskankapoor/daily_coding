@@ -17,16 +17,18 @@ void push(int x ){
 }
 
 
-int pop(){
+void pop(){
 
   if (!output.empty()){
-    return output.pop()
+    cout<< output.pop();
   }
   else{
     while (!input.empty()){
-      output.push(input.pop());
+      int x = input.top();
+      output.push(x);
+      input.pop();
     }
-    return output.pop();
+    cout << output.pop();
   }
 
 }
@@ -35,11 +37,13 @@ int pop(){
 int peak(){
 
   if (!output.empty()){
-    return output.top()
+    return output.top();
   }
   else{
     while (!input.empty()){
-      output.push(input.pop());
+      int x = input.top();
+      output.push(x);
+      input.pop();
     }
     return output.top();
   }
@@ -50,6 +54,22 @@ int peak(){
 
 bool isEmpty(){
 
+  if (input.empty() && output.empty()){
+    return true; 
+  }
+  return false;
+
+  
+}
 
 
+int main(){
+
+
+  push(1);
+  push(2);
+  cout << peak();
+  pop();   // returns 1
+  cout << isEmpty(); // returns false
+  
 }
