@@ -25,8 +25,10 @@ struct Node
 /* Iterative function */
 void inOrder(struct Node *root) 
 { 
-    stack<Node *> s; 
-    Node *curr = root; 
+  stack<Node *> s;  // 1. empty stack 
+  Node *curr = root;   //2. push root
+
+  // 3. 
   
     while (curr != NULL || s.empty() == false) 
     { 
@@ -67,14 +69,17 @@ void preorder(Node *root){
         /* Reach the left most Node of the 
            curr Node */
         while (curr !=  NULL) 
-        { 
+        {
+
+	  //  3. Push the current node to S and set current = current->left until current is NULL
             /* place pointer to a tree node on 
                the stack before traversing 
               the node's left subtree */
             s.push(curr); 
             curr = curr->left; 
         } 
-  
+
+	//	4. if current is null pop the item print it and check its right
         /* Current must be NULL at this point */
         curr = s.top(); 
         s.pop(); 
