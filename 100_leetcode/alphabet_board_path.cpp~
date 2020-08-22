@@ -19,7 +19,7 @@ string AlphabetBoard(string target){
 
     }
     else{
-      FindPath(result, prevrow, prevcol, currow currcol);
+9=      FindPath(result, prevrow, prevcol, currow currcol);
       result.append('!');
       prevcol = currcol;
       prevrow = currow; 

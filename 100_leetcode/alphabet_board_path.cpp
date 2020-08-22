@@ -2,6 +2,43 @@
 #include <vector>
 usin namespace std;
 
+//prex = prevrol, prevy = prevcol
+
+void FindAndStorePath(StringBuilder sb,int prevx,int prevy,
+		      int curx,int cury){
+  //Here the Order is very important
+         
+  //When the curent element is above to the previous element
+  while(prevx > curx)
+    {
+      sb.Append('U');
+      prevx--;
+    }
+         
+  //When the current element is right to the previous element
+  while(prevy < cury)
+    {
+      sb.Append('R');
+      prevy++;
+    }
+         
+  //When the current element is left to the previous element
+  while(prevy > cury)
+    {
+      sb.Append('L');
+      prevy--;
+    }
+         
+  //When the curent element is below to the previous element
+  while(prevx < curx)
+    {
+      sb.Append('D');
+      prevx++;
+    }
+         
+}
+}
+
 
 // time on
 // space o1 
@@ -11,8 +48,8 @@ string AlphabetBoard(string target){
   int prevrow = 0, prevcol = 0;
 
   for (int i = 0; i < target.length(); i++){
-    int currow = (c - 'a')/5; // row
-    int currcol = (c - 'a')%5; // col
+    int currow = (target[i] - 'a')/5; // row
+    int currcol = (target[i] - 'a')%5; // col
 
     if (currow == prevrow && currcol == prevcol){
       result.append('!');
@@ -32,29 +69,6 @@ string AlphabetBoard(string target){
 }
 
 
-void FindPath(string result, int prevrow, int prevcol, int currow, int currcol){
 
-  while (prevrow > currow){
-    result.append('U');
-    prevrow--;
-  }
-
-  while (prevcol < currcol){
-    result.append('R');
-    prevcol++:
-  }
-
-  while (prevrow < currow){
-    result.append('D');
-    prevrow++;
-  }
-
-
-  while (prevrow > currow){
-    result.append('L');
-    prevrow++;
-  }
-  
-  
-
-}
+// time on
+space 01
